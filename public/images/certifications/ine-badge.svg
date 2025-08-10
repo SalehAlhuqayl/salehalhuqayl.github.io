@@ -1,0 +1,8 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#10b981"/>
+  <rect x="50" y="50" width="300" height="200" rx="8" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+  <circle cx="200" cy="120" r="25" fill="#10b981"/>
+  <text x="200" y="160" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="16" font-weight="bold">INE</text>
+  <text x="200" y="180" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif" font-size="12">Data Science Certificate</text>
+  <rect x="80" y="200" width="240" height="6" rx="3" fill="#10b981"/>
+</svg>

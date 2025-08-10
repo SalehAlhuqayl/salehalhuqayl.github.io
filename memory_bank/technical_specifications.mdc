@@ -1,0 +1,247 @@
+---
+alwaysApply: true
+---
+# Technical Specifications - Portfolio Project
+
+## Content Management System
+
+### Primary Configuration File
+**Location**: `src/content/site-data.json`  
+**Purpose**: Single source of truth for all site content  
+**Format**: JSON with TypeScript interface validation  
+
+### Required Data Structure
+```typescript
+interface SiteData {
+  brand: {
+    name: string;
+    title: string;
+    tagline: string;
+    email: string;
+    location: string;
+    social: {
+      github: string;
+      linkedin: string;
+    };
+  };
+  nav: Array<{
+    label: string;
+    href: string;
+  }>;
+  meta: {
+    title: string;
+    description: string;
+    keywords: string[];
+    og_image: string;
+  };
+  hero: {
+    headline: string;
+    subtitle: string;
+    cta_primary: { text: string; href: string; };
+    cta_secondary: { text: string; href: string; };
+  };
+  highlights: Array<{
+    number: string;
+    label: string;
+    description: string;
+  }>;
+  projects: Array<{
+    slug: string;
+    name: string;
+    role: string;
+    period: string;
+    stack: string[];
+    problem: string;
+    approach: string[];
+    impact: string[];
+    links: { repo?: string; live?: string; };
+    images: string[];
+  }>;
+  footer: string;
+}
+```
+
+## File Organization Structure
+
+### Target Directory Structure
+```
+Portfolio/
+├── public/
+│   ├── favicon.svg
+│   ├── resume.pdf
+│   └── images/
+│       ├── projects/
+│       │   └── nusuk-1.png
+│       ├── og-image.png
+│       └── headshot.jpg
+├── src/
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── ProjectCard.astro
+│   │   ├── Button.astro
+│   │   └── Footer.astro
+│   ├── content/
+│   │   └── site-data.json
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── index.astro (Home)
+│   │   ├── work.astro
+│   │   ├── projects.astro
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   └── resume.astro
+│   ├── styles/
+│   │   └── global.css
+│   ├── types/
+│   │   └── content.ts
+│   └── utils/
+│       └── content.ts
+└── [config files]
+```
+
+## Component Specifications
+
+### Header.astro
+- **Purpose**: Site navigation with mobile responsiveness
+- **Features**: Logo/brand, navigation menu, mobile hamburger menu
+- **Data Source**: `siteData.brand`, `siteData.nav`
+- **Responsive**: Mobile-first with breakpoint at md (768px)
+
+### Hero.astro
+- **Purpose**: Home page hero section
+- **Features**: Headline, subtitle, dual CTAs, background styling
+- **Data Source**: `siteData.hero`, `siteData.brand`
+- **Layout**: Centered content with gradient or image background
+
+### ProjectCard.astro
+- **Purpose**: Reusable project preview component
+- **Features**: Image, title, description, tech stack, links
+- **Data Source**: Individual project objects from `siteData.projects`
+- **Variants**: Grid layout for projects page, featured for home page
+
+### Button.astro
+- **Purpose**: Consistent button styling across site
+- **Variants**: Primary (filled), secondary (outline), link style
+- **Props**: `variant`, `href`, `size`, `disabled`
+- **Accessibility**: Proper ARIA labels and keyboard navigation
+
+### Footer.astro
+- **Purpose**: Site footer with social links and copyright
+- **Features**: Social media links, contact info, copyright text
+- **Data Source**: `siteData.footer`, `siteData.brand.social`
+
+## Page Implementation Details
+
+### Home Page (index.astro)
+**Sections**:
+1. Hero section with headline and CTAs
+2. Highlights/metrics section (3-column grid)
+3. Selected projects preview (2-3 featured projects)
+4. Call-to-action section
+
+**Performance**: Optimize largest contentful paint with hero image/content
+
+### Work Page (work.astro)
+**Layout**: Case study format with Problem → Approach → Impact structure
+**Content**: Detailed project breakdowns with quantified results
+**Components**: ProjectCard components in expanded format
+
+### Projects Page (projects.astro)
+**Layout**: Grid layout (responsive: 1-2-3 columns)
+**Features**: Technology stack filtering/tags
+**Interaction**: Hover effects, smooth transitions
+
+### About Page (about.astro)
+**Content**: Professional bio, skills matrix, certifications
+**Layout**: Two-column on desktop, single-column on mobile
+**Features**: Skills visualization, timeline format for experience
+
+### Contact Page (contact.astro)
+**Content**: Contact information, social links
+**Optional**: Contact form with validation
+**Accessibility**: Clear focus states, error messaging
+
+### Resume Page (resume.astro)
+**Features**: Embedded PDF viewer, download button
+**Fallback**: Direct download link if embed fails
+**Mobile**: Responsive PDF display or mobile-optimized view
+
+## Performance Specifications
+
+### Lighthouse Targets
+- **Performance**: 95+
+- **Accessibility**: 95+
+- **Best Practices**: 95+
+- **SEO**: 95+
+
+### Core Web Vitals
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
+
+### Optimization Strategies
+1. **Image Optimization**: WebP format, responsive images, lazy loading
+2. **Bundle Size**: Minimal JavaScript, tree-shaking
+3. **CSS**: Critical CSS inlining, unused CSS removal
+4. **Fonts**: Preload critical fonts, font-display: swap
+
+## SEO Requirements
+
+### Meta Tags
+- Title, description, keywords from `siteData.meta`
+- Open Graph tags for social media
+- Twitter Card tags
+- Canonical URLs
+
+### Structured Data
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saleh Aluqayl",
+  "jobTitle": "Data Scientist",
+  "url": "https://portfolio-domain.com",
+  "sameAs": ["github_url", "linkedin_url"]
+}
+```
+
+### Additional SEO Features
+- XML sitemap generation
+- Robots.txt configuration
+- Clean URL structure
+- Internal linking strategy
+
+## Accessibility Standards
+
+### WCAG 2.1 AA Compliance
+- **Color Contrast**: Minimum 4.5:1 ratio
+- **Keyboard Navigation**: Full site navigable via keyboard
+- **Screen Readers**: Proper ARIA labels and semantic HTML
+- **Focus Management**: Visible focus indicators
+
+### Implementation Details
+- Semantic HTML5 elements
+- Alt text for all images
+- Proper heading hierarchy (h1-h6)
+- Form labels and error messages
+- Skip navigation links
+
+## Deployment Configuration
+
+### Vercel Settings
+- **Build Command**: `pnpm build`
+- **Output Directory**: `dist`
+- **Node Version**: 20.x
+- **Environment Variables**: None required for static site
+
+### Performance Monitoring
+- **Analytics**: Optional Google Analytics integration
+- **Error Tracking**: Console error monitoring
+- **Core Web Vitals**: Vercel Analytics integration
+
+---
+*Technical Specifications v1.0*
+*Purpose: Detailed implementation guide for development team*

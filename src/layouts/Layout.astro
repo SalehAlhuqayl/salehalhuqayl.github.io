@@ -1,0 +1,110 @@
+---
+import { getSiteData, getPageTitle } from '../utils/content';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const siteData = getSiteData();
+const currentPath = Astro.url.pathname;
+
+const pageTitle = title || getPageTitle(currentPath);
+const pageDescription = description || siteData.meta.description;
+const keywords = siteData.meta.keywords.join(', ');
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{pageTitle}</title>
+		<meta name="title" content={pageTitle} />
+		<meta name="description" content={pageDescription} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content={siteData.brand.name} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:image" content={new URL(siteData.meta.og_image, Astro.url)} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={pageTitle} />
+		<meta property="twitter:description" content={pageDescription} />
+		<meta property="twitter:image" content={new URL(siteData.meta.og_image, Astro.url)} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={Astro.url} />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": siteData.brand.name,
+			"jobTitle": siteData.brand.title,
+			"description": siteData.meta.description,
+			"url": "https://salehalhuqayl.vercel.app",
+			"email": siteData.brand.email,
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Riyadh",
+				"addressCountry": "Saudi Arabia"
+			},
+			"sameAs": [
+				siteData.brand.social.linkedin,
+				siteData.brand.social.github,
+				siteData.brand.social.twitter
+			],
+			"knowsAbout": [
+				"Data Science",
+				"Machine Learning", 
+				"Predictive Analytics",
+				"Data Quality",
+				"Business Intelligence",
+				"Python Programming",
+				"Statistical Modeling"
+			],
+			"alumniOf": {
+				"@type": "EducationalOrganization",
+				"name": "University"
+			},
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Mozn"
+			}
+		})}></script>
+	</head>
+	<body class="min-h-screen bg-white text-gray-900 flex flex-col">
+		<Header />
+		<main class="flex-1">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	html {
+		font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		margin: 0;
+		line-height: 1.6;
+	}
+</style>

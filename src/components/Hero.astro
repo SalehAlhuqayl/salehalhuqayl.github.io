@@ -1,0 +1,152 @@
+---
+import { getSiteData } from '../utils/content';
+import Button from './Button.astro';
+
+const siteData = getSiteData();
+const { hero, brand } = siteData;
+---
+
+<section class="relative bg-white overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+  </div>
+  
+  <div class="relative max-w-7xl mx-auto">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+      <!-- Hero SVG Shape -->
+      <svg
+        class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+        fill="currentColor"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <polygon points="50,0 100,0 50,100 0,100" />
+      </svg>
+
+      <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+        <!-- Hero Content -->
+        <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div class="sm:text-center lg:text-left">
+            <!-- Greeting -->
+            <div class="mb-6">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V1a1 1 0 011-1h2a1 1 0 011 1v3M7 4H5a1 1 0 00-1 1v3m12-4h2a1 1 0 011 1v3m-6 2a4 4 0 100 8 4 4 0 000-8z"/>
+                </svg>
+                Available for opportunities
+              </span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block">Hi, I'm</span>
+              <span class="block text-blue-600">{brand.name}</span>
+            </h1>
+
+            <!-- Hero Tagline -->
+            <h2 class="mt-6 text-xl sm:text-2xl font-medium text-gray-600 max-w-3xl">
+              {hero.headline}
+            </h2>
+
+            <!-- Subtitle -->
+            <p class="mt-4 text-lg text-gray-500 max-w-2xl">
+              {hero.subtitle}
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start">
+              <div class="rounded-md shadow">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  href={hero.cta_primary.href}
+                  class="w-full sm:w-auto"
+                >
+                  {hero.cta_primary.text}
+                  <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Button>
+              </div>
+              <div class="mt-3 sm:mt-0 sm:ml-3">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  href={hero.cta_secondary.href}
+                  target="_blank"
+                  class="w-full sm:w-auto"
+                >
+                  <svg class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  {hero.cta_secondary.text}
+                </Button>
+              </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3 max-w-lg">
+              <div class="text-center lg:text-left">
+                <div class="text-2xl font-bold text-blue-600">4.72</div>
+                <div class="text-sm text-gray-500">GPA (Data Science)</div>
+              </div>
+              <div class="text-center lg:text-left">
+                <div class="text-2xl font-bold text-blue-600">16+</div>
+                <div class="text-sm text-gray-500">Data Systems Integrated</div>
+              </div>
+              <div class="text-center lg:text-left col-span-2 sm:col-span-1">
+                <div class="text-2xl font-bold text-blue-600">150+</div>
+                <div class="text-sm text-gray-500">Business Rules Mapped</div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Modern Text Animation -->
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <div class="h-56 w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 sm:h-72 md:h-96 lg:w-full lg:h-full relative overflow-hidden flex items-center justify-center">
+        
+        <!-- Animated Background Lines -->
+        <div class="absolute inset-0 opacity-5">
+          <div class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse"></div>
+          <div class="absolute top-2/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent animate-pulse" style="animation-delay: 1s;"></div>
+          <div class="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <!-- Central Text Display -->
+        <div class="text-center space-y-6 px-8">
+          <!-- Main Keywords with Typing Effect -->
+          <div class="space-y-3">
+            <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700">
+              <span class="text-blue-600 animate-pulse">Data Science</span>
+            </div>
+            <div class="text-lg md:text-xl text-gray-600 animate-fade-in" style="animation-delay: 0.5s;">
+              Machine Learning • Analytics
+            </div>
+            <div class="text-base md:text-lg text-gray-500 animate-fade-in" style="animation-delay: 1s;">
+              AI Solutions • Predictive Models
+            </div>
+          </div>
+          
+          <!-- Animated Accent Line -->
+          <div class="flex justify-center mt-6">
+            <div class="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-500 animate-pulse"></div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+</style>

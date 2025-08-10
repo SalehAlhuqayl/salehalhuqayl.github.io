@@ -1,0 +1,266 @@
+{
+  "brand": {
+    "name": "Saleh Alhuqayl",
+    "title": "Data Scientist",
+    "tagline": "Specializing in data quality, AI-driven analytics, and strategic reporting.",
+    "email": "Saleh.Alhuqayl@gmail.com",
+    "location": "Riyadh, Saudi Arabia",
+    "social": {
+      "github": "https://github.com/SalehAlhuqayl",
+      "linkedin": "https://linkedin.com/in/salehalhuqayl",
+      "twitter": "https://x.com/salehalhuqayl"
+    }
+  },
+  "nav": [
+    { "label": "Work", "href": "/work" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Resume", "href": "/resume" }
+  ],
+  "meta": {
+    "title": "Saleh Alhuqayl - Data Scientist Portfolio",
+    "description": "Data Scientist at Mozn specializing in data quality, AI-driven analytics, and strategic reporting. Experience with Ministry of Hajj & Umrah and Boeing Saudi Arabia.",
+    "keywords": ["Data Science", "AI Analytics", "Data Quality", "Python", "Machine Learning", "Data Governance", "Ministry of Hajj", "Boeing", "Riyadh", "Saudi Arabia"],
+    "og_image": "/favicon.svg"
+  },
+  "hero": {
+    "headline": "Bridging technical innovation and operational impact",
+    "subtitle": "Data Scientist specializing in data quality, AI-driven analytics, and strategic reporting. Currently delivering scalable solutions for government ministries and enterprise clients.",
+    "cta_primary": {
+      "text": "View My Work",
+      "href": "/work"
+    },
+    "cta_secondary": {
+      "text": "Download Resume",
+      "href": "/SalehAlhuqayl_CV_EN.pdf"
+    }
+  },
+  "highlights": [
+    {
+      "number": "80%",
+      "label": "Infrastructure Coverage",
+      "description": "Built and integrated 15+ data systems for MoHU"
+    },
+    {
+      "number": "25%",
+      "label": "Accuracy Boost", 
+      "description": "Enhanced geographic data accuracy via Python-based error detection"
+    },
+    {
+      "number": "20%",
+      "label": "Faster Reporting",
+      "description": "Accelerated analytical and operational reporting during peak Hajj seasons"
+    },
+    {
+      "number": "12%",
+      "label": "Cost Reduction",
+      "description": "Achieved at Boeing Saudi Arabia by delivering data-driven operational solutions"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "mohu-ndi-compliance",
+      "name": "National Data Index Compliance for MoHU",
+      "role": "Data Scientist at Mozn",
+      "period": "Nov 2024 – Present",
+      "stack": ["Python", "Informatica IDQ", "Data Quality", "Data Governance", "Critical Data Elements", "NDI"],
+      "problem": "The Ministry of Hajj & Umrah needed to integrate 16+ diverse data systems and align with National Data Index (NDI) standards while ensuring data quality across multiple dimensions.",
+      "approach": [
+        "Integrated 16+ data systems from diverse databases into centralized catalog",
+        "Applied over 150 Critical Data Elements (CDEs) covering uniqueness, completeness, and validity",
+        "Mapped all CDEs to NDI standards for compliance",
+        "Implemented automated validation and quality monitoring",
+        "Enhanced and governed the ministry’s datasets by reviewing Hajj & Umrah Center data, delivering numerous insights and recommendations.",
+        "Focused on improving critical pilgrimage datasets, most notably accommodation data, achieving a 25% improvement in Hajj housing records."
+      ],
+      "impact": [
+        "Achieved 80% infrastructure coverage across MoHU systems",
+        "Enhanced data governance and compliance with national standards",
+        "Significantly improved data quality for MoHU operations",
+        "Accelerated reporting during peak Hajj seasons by 20%"
+      ],
+      "links": {
+        "repo": null,
+        "live": null
+      },
+      "images": []
+    },
+    {
+      "slug": "predictive-maintenance-optimization",
+      "name": "Predictive Maintenance Optimization",
+      "role": "Researcher & ML Engineer",
+      "period": "2024",
+      "stack": ["Python", "Scikit-learn", "Machine Learning", "IIoT", "Data Analysis"],
+      "problem": "Industrial equipment failures causing unexpected downtime and high maintenance costs without early warning systems.",
+      "approach": [
+        "Developed predictive maintenance framework using Industrial IoT sensors",
+        "Applied machine learning algorithms for failure prediction",
+        "Implemented real-time monitoring and alert systems",
+        "Published research findings in IJACSA journal"
+      ],
+      "impact": [
+        "Improved machine reliability and extended equipment lifespan",
+        "Reduced unexpected breakdowns through early warning system",
+        "Research published in International Journal of Advanced Computer Science",
+        "Created reusable framework for industrial applications"
+      ],
+      "links": {
+        "repo": "https://thesai.org/Publications/ViewPaper?Volume=15&Issue=4&Code=IJACSA&SerialNo=64",
+        "live": null
+      },
+      "images": []
+    },
+    {
+      "slug": "boeing-operations-analysis",
+      "name": "Operations Analysis & Cost Optimization",
+      "role": "Operations Analyst Intern",
+      "period": "Jul 2024 – Oct 2024",
+      "stack": ["Python", "Data Analysis", "Simulation Tools", "Operational Research", "Presentation"],
+      "problem": "Boeing Saudi Arabia needed enhanced internal simulation tools and data-driven insights for operational decision-making to reduce costs.",
+      "approach": [
+        "Enhanced internal simulation tools for better operational modeling",
+        "Conducted comprehensive analysis of operational processes",
+        "Presented insights and recommendations to military stakeholders",
+        "Proposed data-driven solutions for cost optimization"
+      ],
+      "impact": [
+        "Reduced operational costs by 12% through data-driven solutions",
+        "Improved decision-making processes for military operations",
+        "Enhanced simulation tool capabilities for future use",
+        "Delivered actionable insights to senior stakeholders"
+      ],
+      "links": {
+        "repo": null,
+        "live": null
+      },
+      "images": []
+    },
+    {
+      "slug": "investment-analysis-tasi-gold",
+      "name": "Investment Growth Analysis - TASI & Gold Futures",
+      "role": "Data Analyst",
+      "period": "2024",
+      "stack": ["R", "Tidyverse", "ggplot2", "Data Analysis", "Financial Modeling"],
+      "problem": "Investors needed insights into historical performance comparison between Saudi stock market (TASI) and Gold Futures for portfolio diversification decisions.",
+      "approach": [
+        "Analyzed historical performance data from 1998-2023",
+        "Compared SAR 1,000 investment growth in TASI vs Gold Futures",
+        "Applied statistical analysis for performance metrics",
+        "Created visualization dashboards for investment insights"
+      ],
+      "impact": [
+        "Provided clear portfolio diversification insights for 25-year period",
+        "Identified optimal investment allocation strategies",
+        "Created reusable framework for future market analysis",
+        "Delivered actionable recommendations for investment decisions"
+      ],
+      "links": {
+        "repo": "https://github.com/SalehAlhuqayl/investment-analysis",
+        "live": null
+      },
+      "images": []
+    },
+    {
+      "slug": "temp-analysis-tasi-gold",
+      "name": "temp Growth Analysis - TASI & Gold Futures",
+      "role": "Data Analyst",
+      "period": "2024",
+      "stack": ["R", "Tidyverse", "ggplot2", "Data Analysis", "Financial Modeling"],
+      "problem": "Investors needed insights into historical performance comparison between Saudi stock market (TASI) and Gold Futures for portfolio diversification decisions.",
+      "approach": [
+        "Analyzed historical performance data from 1998-2023",
+        "Compared SAR 1,000 investment growth in TASI vs Gold Futures",
+        "Applied statistical analysis for performance metrics",
+        "Created visualization dashboards for investment insights"
+      ],
+      "impact": [
+        "Provided clear portfolio diversification insights for 25-year period",
+        "Identified optimal investment allocation strategies",
+        "Created reusable framework for future market analysis",
+        "Delivered actionable recommendations for investment decisions"
+      ],
+      "links": {
+        "repo": "https://github.com/SalehAlhuqayl/investment-analysis",
+        "live": null
+      },
+      "images": []
+    }
+  ],
+  "about": {
+    "bio": "Data Scientist with expertise in building scalable analytics solutions and ensuring data quality across complex systems. Currently at Mozn, with previous experience at Ministry of Hajj & Umrah and Boeing Saudi Arabia. Passionate about leveraging AI and machine learning to solve real-world business challenges.",
+    "experience_years": "1+",
+    "projects_completed": "16+",
+    "gpa": "4.72",
+    "skills": {
+      "technical": [
+        {
+          "category": "Programming Languages",
+          "items": ["Python", "R", "SQL", "C++"]
+        },
+        {
+          "category": "Data Science & ML",
+          "items": ["Machine Learning", "Deep Learning", "Predictive Analytics", "Statistical Modeling", "Data Mining"]
+        },
+        {
+          "category": "Data Analysis",
+          "items": ["Pandas","Polars", "NumPy","Geopandas","tidyverse"]
+        },
+        {
+          "category": "Data Engineering",
+          "items": ["Pipelines", "Data Warehousing", "Informatica IDQ", "Data Quality"]
+        },
+        {
+          "category": "Databases",
+          "items": ["sqlalchemy", "NoSQL", "SQL"]
+        },
+        {
+          "category": "Visualization & BI",
+          "items": ["Power BI", "Plotly", "Matplotlib", "Seaborn","Folium","ggplot2","ggmap"]
+        }
+      ],
+      "soft": [
+        "Problem Solving",
+        "Strategic Thinking", 
+        "Project Management",
+        "Cross-functional Collaboration",
+        "Data Storytelling",
+        "Stakeholder Communication"
+      ]
+    }
+  },
+  "contact": {
+    "intro": "Let's discuss how data science can drive your next breakthrough. I'm always open to exploring new opportunities and collaborations.",
+    "availability": "Available for freelance projects and full-time opportunities",
+    "response_time": "Within 24 hours",
+    "preferred_contact": "email"
+  },
+  "certifications": [
+    {
+      "name": "Predictive Analytics Modeler Certificate",
+      "issuer": "IBM",
+      "date": "2024",
+      "description": "Professional certification in predictive analytics modeling, machine learning algorithms, and statistical analysis using IBM tools and methodologies",
+      "badge": null,
+      "url": "https://www.credly.com/badges/9a474bb0-babb-4d36-ba4a-d5a6a003c835/public_url"
+    },
+    {
+      "name": "Jr Data Scientist Certificate",
+      "issuer": "INE",
+      "date": "2024",
+      "description": "Junior Data Scientist certification covering data analysis, machine learning fundamentals, Python programming, and data visualization techniques",
+      "badge": null,
+      "url": "https://certs.ine.com/9a0f5eea-7bec-4edd-8ce0-6205a8b3cd16#acc.ujoirp0s"
+    },
+
+    {
+      "name": "HCIA-AI Certificate",
+      "issuer": "Huawei",
+      "date": "2024",
+      "description": "Huaw ICT Associate in Artificial Intelligence, covering AI fundamentals, machine learning, deep learning, and AI application development",
+      "badge": null,
+      "url": "https://drive.google.com/file/d/1PvNBiQ2dm2cO8T2RYOQ_ouB7nOk2ol6f/view?usp=drivesdk"
+    }
+  ],
+  "footer": "© 2025 Saleh Aluqayl. All rights reserved."
+}

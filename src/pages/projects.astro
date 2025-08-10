@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Button from '../components/Button.astro';
+import { getProjects } from '../utils/content';
+
+const projects = getProjects();
+
+// Get all unique technologies from all projects for filtering
+const allTechnologies = [...new Set(projects.flatMap(project => project.stack))].sort();
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-r from-indigo-600 to-purple-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+          Projects Portfolio
+        </h1>
+        <p class="mt-6 text-xl text-indigo-100 max-w-3xl mx-auto">
+          Explore my data science projects spanning government ministries, aerospace analytics, and financial markets
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Filter -->
+  <section class="py-8 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button 
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium border transition-colors active"
+          data-filter="all"
+        >
+          All Projects
+        </button>
+        {allTechnologies.map((tech) => (
+          <button 
+            class="filter-btn px-4 py-2 rounded-full text-sm font-medium border transition-colors"
+            data-filter={tech.toLowerCase().replace(/\s+/g, '-')}
+          >
+            {tech}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" id="projects-grid">
+        {projects.map((project) => (
+          <div 
+            class="project-item"
+            data-technologies={project.stack.map(tech => tech.toLowerCase().replace(/\s+/g, '-')).join(' ')}
+          >
+            <ProjectCard 
+              project={project} 
+              variant="featured" 
+              showFullDescription={true} 
+            />
+          </div>
+        ))}
+      </div>
+
+      <!-- Empty State -->
+      <div id="no-results" class="hidden text-center py-12">
+        <div class="text-gray-500">
+          <svg class="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">No projects found</h3>
+          <p class="text-gray-500">Try selecting a different technology filter</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-indigo-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl mb-4">
+        Interested in My Work?
+      </h2>
+      <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+        Let's discuss how I can bring similar results to your data challenges
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button 
+          variant="secondary" 
+          size="lg" 
+          href="/contact"
+          class="bg-white text-indigo-600 hover:bg-gray-50"
+        >
+          Start a Conversation
+        </Button>
+        <Button 
+          variant="ghost" 
+          size="lg" 
+          href="/about"
+          class="text-white border-white hover:bg-white hover:text-indigo-600"
+        >
+          Learn More About Me
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Client-side filtering functionality
+  function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    const noResults = document.getElementById('no-results');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        
+        // Update active state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        let visibleCount = 0;
+        
+        projectItems.forEach(item => {
+          const technologies = item.getAttribute('data-technologies');
+          
+          if (filter === 'all' || technologies.includes(filter)) {
+            item.style.display = 'block';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  // Initialize when page loads
+  document.addEventListener('DOMContentLoaded', initProjectFilters);
+</script>
+
+<style>
+  .filter-btn {
+    background-color: #f3f4f6;
+    color: #374151;
+    border-color: #e5e7eb;
+  }
+  
+  .filter-btn:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .filter-btn.active {
+    background-color: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+  }
+</style>

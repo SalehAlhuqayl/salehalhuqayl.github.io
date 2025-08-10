@@ -1,0 +1,220 @@
+---
+alwaysApply: true
+---
+
+# Development Checklist - Portfolio Project
+
+## Phase 1: Content Management Setup ⏳
+
+### Content Structure
+- [ ] Create `src/content/` directory
+- [ ] Implement `src/content/site-data.json` with complete data structure
+- [ ] Validate JSON structure matches TypeScript interfaces
+
+### TypeScript Setup
+- [ ] Create `src/types/content.ts` with SiteData interface
+- [ ] Export all required type definitions
+- [ ] Ensure strict type checking compatibility
+
+### Utility Functions
+- [ ] Create `src/utils/content.ts` for data loading
+- [ ] Implement `getSiteData()` function with error handling
+- [ ] Add content validation utilities
+- [ ] Create helper functions for data transformation
+
+---
+
+## Phase 2: Core Components Development ⏳
+
+### Layout Updates
+- [ ] Update `src/layouts/Layout.astro` with dynamic meta tags
+- [ ] Integrate Header and Footer components
+- [ ] Add global navigation structure
+- [ ] Implement responsive viewport configuration
+
+### Component Creation
+- [ ] **Header.astro**: Navigation with mobile menu
+  - [ ] Logo/brand integration
+  - [ ] Desktop navigation menu
+  - [ ] Mobile hamburger menu
+  - [ ] Active page highlighting
+- [ ] **Hero.astro**: Home page hero section
+  - [ ] Dynamic headline and subtitle
+  - [ ] Primary and secondary CTAs
+  - [ ] Background styling integration
+- [ ] **ProjectCard.astro**: Reusable project cards
+  - [ ] Image display with fallbacks
+  - [ ] Technology stack tags
+  - [ ] Action buttons (view, repo links)
+  - [ ] Responsive card layout
+- [ ] **Button.astro**: Consistent button component
+  - [ ] Primary, secondary, and link variants
+  - [ ] Size variations (small, medium, large)
+  - [ ] Disabled and loading states
+- [ ] **Footer.astro**: Site footer
+  - [ ] Social media links
+  - [ ] Copyright information
+  - [ ] Contact details
+
+---
+
+## Phase 3: Page Implementation ⏳
+
+### Home Page (`src/pages/index.astro`)
+- [ ] Hero section integration
+- [ ] Highlights/metrics section (3-column responsive grid)
+- [ ] Selected projects preview
+- [ ] Call-to-action sections
+- [ ] Performance optimization for LCP
+
+### Work Page (`src/pages/work.astro`)
+- [ ] Case study layout implementation
+- [ ] Problem → Approach → Impact structure
+- [ ] Project filtering and sorting
+- [ ] Detailed project breakdowns
+- [ ] Image galleries for project showcase
+
+### Projects Page (`src/pages/projects.astro`)
+- [ ] Responsive grid layout (1-2-3 columns)
+- [ ] Technology stack filtering
+- [ ] Search functionality (optional)
+- [ ] Pagination for large project lists
+- [ ] Smooth hover effects and transitions
+
+### About Page (`src/pages/about.astro`)
+- [ ] Professional bio section
+- [ ] Skills and competencies display
+- [ ] Certifications and education
+- [ ] Timeline format for experience
+- [ ] Two-column responsive layout
+
+### Contact Page (`src/pages/contact.astro`)
+- [ ] Contact information display
+- [ ] Social media links integration
+- [ ] Contact form implementation (optional)
+- [ ] Form validation and error handling
+- [ ] Success/thank you messaging
+
+### Resume Page (`src/pages/resume.astro`)
+- [ ] PDF embed functionality
+- [ ] Download button implementation
+- [ ] Mobile-responsive PDF display
+- [ ] Fallback for PDF loading failures
+- [ ] Print-friendly styling
+
+---
+
+## Phase 4: Assets and Styling ⏳
+
+### Asset Organization
+- [ ] Add `public/resume.pdf` - Professional resume document
+- [ ] Create `public/images/projects/` directory structure
+- [ ] Add project screenshots and images
+- [ ] Include `public/images/og-image.png` for social media
+- [ ] Add `public/images/headshot.jpg` professional photo
+- [ ] Update `public/favicon.svg` with custom design
+
+### Responsive Design
+- [ ] Mobile-first Tailwind CSS implementation
+- [ ] Tablet breakpoint optimization (md: 768px)
+- [ ] Desktop breakpoint optimization (lg: 1024px)
+- [ ] Large screen optimization (xl: 1280px)
+- [ ] Print stylesheet implementation
+
+### Visual Design
+- [ ] Color palette definition and consistency
+- [ ] Typography scale implementation
+- [ ] Spacing and layout consistency
+- [ ] Interactive states (hover, focus, active)
+- [ ] Loading states and transitions
+- [ ] Error state designs
+
+---
+
+## Phase 5: Deployment and Optimization ⏳
+
+### Performance Optimization
+- [ ] Image optimization (WebP conversion, responsive images)
+- [ ] Bundle size analysis and optimization
+- [ ] Critical CSS inlining
+- [ ] Unused CSS removal
+- [ ] JavaScript tree-shaking verification
+- [ ] Lighthouse performance audit (target: 95+)
+
+### SEO Implementation
+- [ ] Dynamic meta tags from site-data.json
+- [ ] Open Graph tags for social media
+- [ ] Twitter Card implementation
+- [ ] Structured data (JSON-LD) for person schema
+- [ ] XML sitemap generation
+- [ ] Robots.txt configuration
+
+### Accessibility Audit
+- [ ] WCAG 2.1 AA compliance verification
+- [ ] Color contrast testing (minimum 4.5:1)
+- [ ] Keyboard navigation testing
+- [ ] Screen reader compatibility testing
+- [ ] Focus management implementation
+- [ ] Alt text for all images
+
+### Deployment Configuration
+- [ ] Vercel project setup and configuration
+- [ ] Custom domain configuration (if applicable)
+- [ ] Environment variables setup
+- [ ] Build optimization settings
+- [ ] Deploy preview functionality
+- [ ] Production deployment verification
+
+---
+
+## Quality Assurance ✅
+
+### Cross-Browser Testing
+- [ ] Chrome (latest)
+- [ ] Firefox (latest)
+- [ ] Safari (latest)
+- [ ] Edge (latest)
+- [ ] Mobile Safari (iOS)
+- [ ] Chrome Mobile (Android)
+
+### Device Testing
+- [ ] Mobile phones (375px - 414px)
+- [ ] Tablets (768px - 1024px)
+- [ ] Laptops (1024px - 1440px)
+- [ ] Desktop monitors (1440px+)
+
+### Performance Validation
+- [ ] Core Web Vitals measurement
+- [ ] First Contentful Paint < 1.5s
+- [ ] Largest Contentful Paint < 2.5s
+- [ ] Cumulative Layout Shift < 0.1
+- [ ] First Input Delay < 100ms
+
+### Content Validation
+- [ ] All text content loaded from site-data.json
+- [ ] No hardcoded text in components
+- [ ] Content updates reflect immediately
+- [ ] Error handling for missing content
+- [ ] Fallback content for incomplete data
+
+---
+
+## Documentation and Handoff 📋
+
+### Project Documentation
+- [ ] Update README.md with final project details
+- [ ] Document content management workflow
+- [ ] Create deployment instructions
+- [ ] Document troubleshooting guide
+
+### Content Management Guide
+- [ ] Instructions for updating site-data.json
+- [ ] Image optimization guidelines
+- [ ] Asset management best practices
+- [ ] Version control workflow
+
+---
+
+**Progress Tracking**: Update checkboxes as tasks are completed
+**Last Updated**: Current session
+**Total Tasks**: 80+ individual checklist items across 5 phases

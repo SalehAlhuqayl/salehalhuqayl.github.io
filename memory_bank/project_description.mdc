@@ -1,0 +1,298 @@
+---
+alwaysApply: true
+---
+---
+# Portfolio Website Build Instructions
+
+## Project Status
+**Current State**: Fresh Astro + Tailwind CSS setup complete with initial configuration
+- ✅ Astro 5.12.9 with Tailwind CSS 4.1.11 installed
+- ✅ TypeScript strict mode configured
+- ✅ Basic project structure in place
+- ✅ README.md updated with comprehensive project overview
+- ⏳ Content management system needs implementation
+- ⏳ Page components and layouts need development
+
+## Development Environment
+We are working in the following setup:
+- **Operating System:** Windows 10/11
+- **Node.js:** LTS (v20.x) installed from official site
+- **Package Manager:** pnpm (installed globally via `npm i -g pnpm`)
+- **Framework:** Astro 5.12.9
+- **Styling:** Tailwind CSS 4.1.11
+- **TypeScript:** Strict mode enabled
+- **Version Control:** Git
+- **Editor:** Cursor / VS Code
+- **Deployment Target:** Vercel
+
+These are already installed and ready to use.
+
+---
+
+## Project Requirements
+
+### 1. General
+- Build a **production-ready personal portfolio website** for Saleh Aluqayl (Data Scientist) in English.
+- Use **Astro + Tailwind CSS** (already configured).
+- Store all assets (PDF resume, images, icons) in `/public`.
+- Ensure **easy content management**:  
+  All text, navigation items, and project details should be editable from **a single config file** at `src/content/site-data.json`.
+- No hard-coded text in multiple places—centralize all editable data.
+- Target Lighthouse score of 95+ for performance.
+
+---
+
+### 2. Pages & Structure
+1. `/` (Home)  
+   - Hero section with name, title, tagline, and 2 CTAs:
+     - View Selected Work
+     - Download Resume (link to `/resume.pdf`)
+   - Highlights section (metrics/numbers)
+   - Selected projects preview.
+
+2. `/work`  
+   - Case studies with Problem → Approach → Impact.
+
+3. `/projects`  
+   - List of technical projects with description, stack, links, and images.
+
+4. `/about`  
+   - Short professional bio, skills, and certifications.
+
+5. `/contact`  
+   - Email link and/or contact form.
+
+6. `/resume`  
+   - Embed `public/resume.pdf` in an inline PDF viewer.
+   - Include a Download button.
+
+---
+
+### 3. Content Management Implementation
+- Create `/src/content/site-data.json` as the single source of truth for all site content.
+- All components must import and use data from this centralized config file.
+- No hardcoded text should exist in component files.
+- Content structure should support easy updates without touching code.
+
+**Required Implementation Steps**:
+1. Create `src/content/` directory
+2. Implement `site-data.json` with the structure below
+3. Create utility functions to load and type-check content
+4. Update all components to consume centralized data
+
+- Example `site-data.json` structure:
+```json
+{
+  "brand": {
+    "name": "Saleh Aluqayl",
+    "title": "Data Scientist",
+    "tagline": "Turning messy data into measurable business impact.",
+    "email": "SalehAlhuqayl@gmail.com",
+    "location": "Riyadh, KSA",
+    "social": {
+      "github": "https://github.com/SalehAlhuqayl",
+      "linkedin": "https://www.linkedin.com/in/salehalhuqayl/"
+    }
+  },
+  "nav": [
+    { "label": "Work", "href": "/work" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Resume", "href": "/resume" }
+  ],
+  "projects": [
+    {
+      "slug": "nusuk-data-quality",
+      "name": "Nusuk Data Quality Initiative",
+      "role": "Lead Data Scientist",
+      "period": "2025",
+      "stack": ["Python","Pandas","Great Expectations","Airflow","Power BI"],
+      "problem": "Inconsistent fields across sources affecting reporting.",
+      "approach": [
+        "Defined data contracts and validation suites.",
+        "Automated checks for freshness/completeness/validity."
+      ],
+      "impact": [
+        "Completeness +15pp (82%→97%), Freshness SLA 95% weekly.",
+        "Cut manual reconciliation time by 60%."
+      ],
+      "links": {
+        "repo": null,
+        "live": null
+      },
+      "images": ["/images/projects/nusuk-1.png"]
+    }
+  ],
+  "footer": "© 2025 Saleh Aluqayl. All rights reserved.",
+  "meta": {
+    "title": "Saleh Aluqayl - Data Scientist Portfolio",
+    "description": "Data Scientist specializing in turning messy data into measurable business impact. Based in Riyadh, KSA.",
+    "keywords": ["Data Science", "Analytics", "Python", "Machine Learning", "Business Intelligence"],
+    "og_image": "/images/og-image.png"
+  },
+  "hero": {
+    "headline": "Turning messy data into measurable business impact",
+    "subtitle": "Data Scientist with expertise in analytics, machine learning, and business intelligence solutions",
+    "cta_primary": {
+      "text": "View Selected Work",
+      "href": "/work"
+    },
+    "cta_secondary": {
+      "text": "Download Resume",
+      "href": "/resume.pdf"
+    }
+  },
+  "highlights": [
+    {
+      "number": "97%",
+      "label": "Data Completeness Achieved",
+      "description": "Improved from 82% through automated validation"
+    },
+    {
+      "number": "60%",
+      "label": "Time Reduction",
+      "description": "Cut manual reconciliation processes"
+    },
+    {
+      "number": "5+",
+      "label": "Years Experience",
+      "description": "In data science and analytics"
+    }
+  ]
+}
+```
+
+---
+
+## 4. Implementation Roadmap
+
+### Phase 1: Content Management Setup ⏳
+1. **Create content structure**:
+   ```bash
+   mkdir src/content
+   ```
+2. **Implement `src/content/site-data.json`** with the structure above
+3. **Create TypeScript interfaces** in `src/types/content.ts` for type safety
+4. **Build content utility functions** in `src/utils/content.ts`
+
+### Phase 2: Core Components Development ⏳
+1. **Update Layout.astro**:
+   - Add proper meta tags from config
+   - Implement global navigation
+   - Add footer component
+2. **Create reusable components**:
+   - `Header.astro` - Navigation with mobile menu
+   - `Hero.astro` - Home page hero section
+   - `ProjectCard.astro` - Project preview cards
+   - `Button.astro` - Consistent button styling
+   - `Footer.astro` - Site footer
+
+### Phase 3: Page Implementation ⏳
+1. **Home page** (`src/pages/index.astro`):
+   - Hero section with CTAs
+   - Highlights/metrics section
+   - Selected projects preview
+2. **Work page** (`src/pages/work.astro`):
+   - Case study layout
+   - Problem → Approach → Impact structure
+3. **Projects page** (`src/pages/projects.astro`):
+   - Grid layout for all projects
+   - Filter by technology stack
+4. **About page** (`src/pages/about.astro`):
+   - Professional bio
+   - Skills and certifications
+5. **Contact page** (`src/pages/contact.astro`):
+   - Contact information
+   - Optional contact form
+6. **Resume page** (`src/pages/resume.astro`):
+   - PDF embed with download button
+
+### Phase 4: Assets and Styling ⏳
+1. **Add required assets to `/public`**:
+   - `resume.pdf`
+   - Project images in `/public/images/projects/`
+   - Professional headshot
+   - Favicon and meta images
+2. **Implement responsive Tailwind designs**
+3. **Optimize for performance and accessibility**
+
+### Phase 5: Deployment and Optimization ⏳
+1. **Configure Vercel deployment**
+2. **Performance optimization**:
+   - Image optimization
+   - Bundle size analysis
+   - Lighthouse score validation
+3. **SEO optimization**:
+   - Meta tags
+   - Structured data
+   - Sitemap generation
+
+---
+
+## 5. File Structure Target
+
+```
+Portfolio/
+├── public/
+│   ├── favicon.svg
+│   ├── resume.pdf
+│   ├── images/
+│   │   ├── projects/
+│   │   │   └── nusuk-1.png
+│   │   ├── og-image.png
+│   │   └── headshot.jpg
+├── src/
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── ProjectCard.astro
+│   │   ├── Button.astro
+│   │   └── Footer.astro
+│   ├── content/
+│   │   └── site-data.json
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── work.astro
+│   │   ├── projects.astro
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   └── resume.astro
+│   ├── styles/
+│   │   └── global.css
+│   ├── types/
+│   │   └── content.ts
+│   └── utils/
+│       └── content.ts
+├── astro.config.mjs
+├── package.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## 6. Development Guidelines
+
+### Code Quality
+- Use TypeScript strict mode (already configured)
+- Follow Astro best practices for component structure
+- Implement proper error handling for content loading
+- Use semantic HTML for accessibility
+
+### Performance Targets
+- **Lighthouse Performance**: 95+
+- **First Contentful Paint**: < 1.5s
+- **Cumulative Layout Shift**: < 0.1
+- **Bundle Size**: Keep JavaScript minimal (Astro's strength)
+
+### Content Management Best Practices
+- All text content must come from `site-data.json`
+- Use TypeScript interfaces for content validation
+- Implement fallbacks for missing content
+- Document content structure for future updates
+
+---

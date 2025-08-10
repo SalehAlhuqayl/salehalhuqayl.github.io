@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://salehalhuqayl.vercel.app/sitemap.xml
+
+# Disallow private areas
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /.well-known/
+
+# Allow specific files
+Allow: /SalehAlhuqayl_CV_EN.pdf
+Allow: /images/
+Allow: /certificates/

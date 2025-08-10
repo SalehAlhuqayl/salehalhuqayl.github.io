@@ -1,0 +1,62 @@
+---
+import type { Certification } from '../types/content';
+import Button from './Button.astro';
+
+export interface Props {
+  certification: Certification;
+  variant?: 'default' | 'compact';
+}
+
+const { certification, variant = 'default' } = Astro.props;
+const isCompact = variant === 'compact';
+---
+
+<article class={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300`}>
+  <!-- Certification Content -->
+  <div class={`p-6 ${isCompact ? 'p-4' : ''}`}>
+    <!-- Header -->
+    <div class="mb-4">
+      <h3 class={`font-bold text-gray-900 ${isCompact ? 'text-lg' : 'text-xl'} mb-2`}>
+        {certification.name}
+      </h3>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600">
+        <span class="font-medium">{certification.issuer}</span>
+        <span class="text-blue-600 font-medium">{certification.date}</span>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+      {certification.description}
+    </p>
+
+    <!-- Action Button -->
+    {certification.url && (
+      <div class="flex justify-start">
+        <Button
+          variant="ghost"
+          size="sm"
+          href={certification.url}
+          target={certification.url.startsWith('http') ? '_blank' : '_self'}
+          class="text-xs"
+        >
+          {certification.url.includes('.pdf') ? (
+            <>
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              View Certificate
+            </>
+          ) : (
+            <>
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              Verify Certificate
+            </>
+          )}
+        </Button>
+      </div>
+    )}
+  </div>
+</article>

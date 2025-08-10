@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+	<defs>
+		<linearGradient id="data-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop stop-color="#2563eb" offset="0%"></stop>
+			<stop stop-color="#1e40af" offset="100%"></stop>
+		</linearGradient>
+		<linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop stop-color="#06b6d4" offset="0%"></stop>
+			<stop stop-color="#0891b2" offset="100%"></stop>
+		</linearGradient>
+	</defs>
+	
+	<!-- Background Circle -->
+	<circle cx="64" cy="64" r="60" fill="url(#data-gradient)" stroke="none"/>
+	
+	<!-- Data Visualization Elements -->
+	<!-- Bar Chart -->
+	<g transform="translate(20, 45)">
+		<rect x="0" y="20" width="8" height="25" fill="white" opacity="0.9" rx="2"/>
+		<rect x="12" y="15" width="8" height="30" fill="white" opacity="0.9" rx="2"/>
+		<rect x="24" y="10" width="8" height="35" fill="white" opacity="0.9" rx="2"/>
+		<rect x="36" y="5" width="8" height="40" fill="white" opacity="0.9" rx="2"/>
+	</g>
+	
+	<!-- Trend Line -->
+	<path d="M75 85 Q85 75 95 65 Q105 55 115 45" stroke="white" stroke-width="3" fill="none" opacity="0.9" stroke-linecap="round"/>
+	
+	<!-- Data Points -->
+	<circle cx="75" cy="85" r="3" fill="url(#accent-gradient)"/>
+	<circle cx="95" cy="65" r="3" fill="url(#accent-gradient)"/>
+	<circle cx="115" cy="45" r="3" fill="url(#accent-gradient)"/>
+	
+	<!-- Initial Letters -->
+	<text x="64" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="bold">SA</text>
+</svg>

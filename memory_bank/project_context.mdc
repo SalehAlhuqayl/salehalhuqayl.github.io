@@ -1,0 +1,121 @@
+---
+alwaysApply: true
+---
+# Portfolio Project Memory Bank
+
+## Project Overview
+**Owner**: Saleh Aluqayl  
+**Role**: Data Scientist  
+**Location**: Riyadh, KSA  
+**Contact**: SalehAlhuqayl@gmail.com  
+**GitHub**: [SalehAluqayl](https://github.com/SalehAlhuqayl)  
+**LinkedIn**: [salehaluqayl](https://www.linkedin.com/in/salehalhuqayl/)  
+
+## Technical Stack
+- **Framework**: Astro 5.12.9
+- **Styling**: Tailwind CSS 4.1.11
+- **Language**: TypeScript (strict mode)
+- **Package Manager**: pnpm
+- **Environment**: Windows 10/11, Node.js LTS (v20.x)
+- **Deployment**: Vercel
+- **Editor**: Cursor/VS Code
+
+## Project Status Summary
+✅ **Completed**:
+- Astro + Tailwind CSS initial setup
+- TypeScript strict mode configuration
+- Basic project structure
+- README.md with comprehensive overview
+- Project description documentation
+
+⏳ **In Progress**: Content management system implementation
+
+📋 **Pending**: All major development phases (components, pages, styling, deployment)
+
+## Core Requirements
+1. **Content Management**: Single source of truth at `src/content/site-data.json`
+2. **Performance**: Lighthouse score 95+, minimal JavaScript
+3. **Accessibility**: WCAG 2.1 AA compliance, semantic HTML
+4. **SEO**: Optimized meta tags, structured data, sitemap
+5. **Responsive**: Mobile-first design with Tailwind CSS
+
+## Site Architecture
+**Pages Required**:
+- `/` - Home (hero, highlights, selected projects)
+- `/work` - Case studies (Problem → Approach → Impact)
+- `/projects` - Technical projects grid with filtering
+- `/about` - Professional bio, skills, certifications
+- `/contact` - Contact information and form
+- `/resume` - PDF embed with download button
+
+**Key Components**:
+- Header.astro (navigation + mobile menu)
+- Hero.astro (home page hero section)
+- ProjectCard.astro (project preview cards)
+- Button.astro (consistent styling)
+- Footer.astro (site footer)
+
+## Content Structure Preview
+```json
+{
+  "brand": {
+    "name": "Saleh Aluqayl",
+    "title": "Data Scientist",
+    "tagline": "Turning messy data into measurable business impact."
+  },
+  "hero": {
+    "headline": "Turning messy data into measurable business impact",
+    "cta_primary": "View Selected Work",
+    "cta_secondary": "Download Resume"
+  },
+  "highlights": [
+    { "number": "97%", "label": "Data Completeness Achieved" },
+    { "number": "60%", "label": "Time Reduction" },
+    { "number": "5+", "label": "Years Experience" }
+  ]
+}
+```
+
+## Performance Targets
+- **Lighthouse Performance**: 95+
+- **First Contentful Paint**: < 1.5s
+- **Cumulative Layout Shift**: < 0.1
+- **Bundle Size**: Minimal JavaScript (leverage Astro's strengths)
+
+## Asset Requirements
+- `/public/resume.pdf` - Professional resume
+- `/public/images/projects/` - Project screenshots
+- `/public/images/og-image.png` - Social media preview
+- `/public/images/headshot.jpg` - Professional photo
+- Updated favicon.svg
+
+## Implementation Phases
+1. **Phase 1**: Content Management Setup
+2. **Phase 2**: Core Components Development
+3. **Phase 3**: Page Implementation
+4. **Phase 4**: Assets and Styling
+5. **Phase 5**: Deployment and Optimization
+
+## Development Guidelines
+- All text content must come from centralized config
+- Use TypeScript interfaces for content validation
+- Follow Astro best practices for component structure
+- Implement proper error handling for content loading
+- Maintain semantic HTML for accessibility
+- Keep JavaScript minimal (Astro's static-first approach)
+
+## Key Business Context
+**Target Audience**: Potential employers, clients, and professional network in data science
+**Professional Focus**: Data quality, analytics, business intelligence, machine learning
+**Geographic Market**: Middle East (Riyadh, KSA) with global reach
+**Industry**: Data Science, Analytics, Business Intelligence
+
+## Notable Projects to Showcase
+- **Nusuk Data Quality Initiative** (2025)
+  - Role: Lead Data Scientist
+  - Impact: Completeness +15pp (82%→97%), 60% time reduction
+  - Stack: Python, Pandas, Great Expectations, Airflow, Power BI
+
+---
+*Last Updated: Current session*
+*Memory Bank Purpose: Track project context, requirements, and progress throughout development*
