@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://salehalhuqayl.vercel.app/sitemap.xml
+Sitemap: https://salehalhuqayl.github.io/Portfolio-2/sitemap.xml
 
 # Disallow private areas
 Disallow: /api/

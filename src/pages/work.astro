@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Button from '../components/Button.astro';
 import { getProjects, getHighlights } from '../utils/content';
+import { withBase } from '../utils/url';
 
 const projects = getProjects();
 const highlights = getHighlights();
@@ -212,14 +213,14 @@ const highlights = getHighlights();
         <Button 
           variant="primary" 
           size="lg" 
-          href="/contact"
+          href={withBase('/contact')}
         >
           Start a Project
         </Button>
         <Button 
           variant="ghost" 
           size="lg" 
-          href="/projects"
+          href={withBase('/projects')}
           class="text-white border-white hover:bg-white hover:text-gray-900"
         >
           Browse All Projects

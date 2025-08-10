@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import CertificationCard from '../components/CertificationCard.astro';
 import SkillGrid from '../components/SkillGrid.astro';
 import { getAboutData, getBrandInfo, getCertifications } from '../utils/content';
+import { withBase } from '../utils/url';
 
 const aboutData = getAboutData();
 const brandInfo = getBrandInfo();
@@ -139,7 +140,7 @@ const certifications = getCertifications();
         <Button 
           variant="secondary" 
           size="lg" 
-          href="/contact"
+          href={withBase('/contact')}
           class="bg-white text-blue-600 hover:bg-gray-50"
         >
           Get In Touch

@@ -1,5 +1,6 @@
 ---
 import { getSiteData } from '../utils/content';
+import { withBase } from '../utils/url';
 
 const siteData = getSiteData();
 const currentYear = new Date().getFullYear();
@@ -36,7 +37,7 @@ const currentYear = new Date().getFullYear();
           {siteData.nav.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={withBase(item.href)}
                 class="text-gray-600 hover:text-blue-600 transition-colors"
               >
                 {item.label}
@@ -90,7 +91,7 @@ const currentYear = new Date().getFullYear();
           <!-- Quick Actions -->
           <div class="space-y-2">
             <a
-              href="/SalehAlhuqayl_CV_EN.pdf"
+              href={withBase('/SalehAlhuqayl_CV_EN.pdf')}
               download
               class="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors"
             >

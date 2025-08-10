@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import { getBrandInfo } from '../utils/content';
+import { withBase } from '../utils/url';
 
 const brandInfo = getBrandInfo();
 ---
@@ -22,7 +23,7 @@ const brandInfo = getBrandInfo();
           <Button 
             variant="secondary" 
             size="lg" 
-            href="/SalehAlhuqayl_CV_EN.pdf"
+            href={withBase('/SalehAlhuqayl_CV_EN.pdf')}
             target="_blank"
             class="bg-white text-purple-600 hover:bg-gray-50"
           >
@@ -35,7 +36,7 @@ const brandInfo = getBrandInfo();
           <Button 
             variant="ghost" 
             size="lg" 
-            href="/contact"
+            href={withBase('/contact')}
             class="text-white border-white hover:bg-white hover:text-purple-600"
           >
             Contact Me
@@ -59,7 +60,7 @@ const brandInfo = getBrandInfo();
             <Button 
               variant="ghost" 
               size="sm"
-              href="/SalehAlhuqayl_CV_EN.pdf"
+              href={withBase('/SalehAlhuqayl_CV_EN.pdf')}
               target="_blank"
               class="text-white border-white hover:bg-white hover:text-gray-800"
             >
@@ -84,7 +85,7 @@ const brandInfo = getBrandInfo();
         <!-- PDF Embed -->
         <div class="relative" style="height: 800px;">
           <iframe 
-            src="/SalehAlhuqayl_CV_EN.pdf"
+            src={withBase('/SalehAlhuqayl_CV_EN.pdf')}
             class="w-full h-full"
             title="Saleh Alhuqayl CV"
             loading="lazy"
@@ -101,7 +102,7 @@ const brandInfo = getBrandInfo();
                 <p class="text-gray-600 mb-4">PDF preview not available in your browser</p>
                 <Button 
                   variant="primary" 
-                  href="/SalehAlhuqayl_CV_EN.pdf"
+                  href={withBase('/SalehAlhuqayl_CV_EN.pdf')}
                   target="_blank"
                 >
                   Download Resume
@@ -200,7 +201,7 @@ const brandInfo = getBrandInfo();
         <Button 
           variant="secondary" 
           size="lg" 
-          href="/contact"
+          href={withBase('/contact')}
           class="bg-white text-purple-600 hover:bg-gray-50"
         >
           Schedule a Discussion
@@ -208,7 +209,7 @@ const brandInfo = getBrandInfo();
         <Button 
           variant="ghost" 
           size="lg" 
-          href="/work"
+          href={withBase('/work')}
           class="text-white border-white hover:bg-white hover:text-purple-600"
         >
           View My Portfolio

@@ -1,15 +1,17 @@
 ---
 import { getSiteData } from '../utils/content';
 import Button from './Button.astro';
+import { withBase } from '../utils/url';
 
 const siteData = getSiteData();
 const currentPath = Astro.url.pathname;
 
 // Check if current path matches nav item href
 const isActive = (href: string) => {
-  if (href === '/' && currentPath === '/') return true;
-  if (href !== '/' && currentPath.startsWith(href)) return true;
-  return false;
+  const target = withBase(href).replace(/\/+$/, '/');
+  const current = withBase(currentPath).replace(/\/+$/, '/');
+  if (target === withBase('/')) return current === withBase('/');
+  return current.startsWith(target);
 };
 ---
 
@@ -18,7 +20,7 @@ const isActive = (href: string) => {
     <div class="flex justify-between items-center h-16">
       <!-- Logo/Brand -->
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+        <a href={withBase('/')} class="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
           <span>{siteData.brand.name}</span>
         </a>
       </div>
@@ -28,7 +30,7 @@ const isActive = (href: string) => {
         <div class="ml-10 flex items-baseline space-x-4">
           {siteData.nav.map((item) => (
             <a
-              href={item.href}
+              href={withBase(item.href)}
               class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive(item.href)
                   ? 'text-blue-600 bg-blue-50'
@@ -67,7 +69,7 @@ const isActive = (href: string) => {
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
         {siteData.nav.map((item) => (
           <a
-            href={item.href}
+            href={withBase(item.href)}
             class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
               isActive(item.href)
                 ? 'text-blue-600 bg-blue-50'

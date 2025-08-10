@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import CertificationCard from '../components/CertificationCard.astro';
 import Button from '../components/Button.astro';
 import { getSiteData, getHighlights, getFeaturedProjects, getCertifications } from '../utils/content';
+import { withBase } from '../utils/url';
 
 const siteData = getSiteData();
 const highlights = getHighlights();
@@ -65,7 +66,7 @@ const certifications = getCertifications();
       </div>
 
       <div class="text-center">
-        <Button variant="primary" size="lg" href="/work">
+        <Button variant="primary" size="lg" href={withBase('/work')}>
           View All Projects
           <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -105,13 +106,13 @@ const certifications = getCertifications();
         Let's discuss how data science can drive measurable impact for your organization
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <Button variant="secondary" size="lg" href="/contact">
+        <Button variant="secondary" size="lg" href={withBase('/contact')}>
           Get In Touch
         </Button>
         <Button 
           variant="ghost" 
           size="lg" 
-          href="/resume.pdf" 
+          href={withBase('/SalehAlhuqayl_CV_EN.pdf')} 
           target="_blank"
           class="text-white border-white hover:bg-white/10"
         >

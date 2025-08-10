@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Button from '../components/Button.astro';
 import { getProjects } from '../utils/content';
+import { withBase } from '../utils/url';
 
 const projects = getProjects();
 
@@ -92,7 +93,7 @@ const allTechnologies = [...new Set(projects.flatMap(project => project.stack))]
         <Button 
           variant="secondary" 
           size="lg" 
-          href="/contact"
+          href={withBase('/contact')}
           class="bg-white text-indigo-600 hover:bg-gray-50"
         >
           Start a Conversation
@@ -100,7 +101,7 @@ const allTechnologies = [...new Set(projects.flatMap(project => project.stack))]
         <Button 
           variant="ghost" 
           size="lg" 
-          href="/about"
+          href={withBase('/about')}
           class="text-white border-white hover:bg-white hover:text-indigo-600"
         >
           Learn More About Me

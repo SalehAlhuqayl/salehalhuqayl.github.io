@@ -33,9 +33,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Configure Astro base URL
-        if: ${{ github.repository != format('{0}/{0}.github.io', github.actor) }}
         run: |
-          echo "Note: If deploying to a project page, set 'site' and 'base' in astro.config.mjs accordingly."
+          echo "BASE_PATH=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
+          echo "SITE_URL=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_ENV
 
       - name: Build
         run: pnpm build
