@@ -101,4 +101,4 @@ All rights reserved. The content, design, and code in this repository are for my
 ## Contact
 
 - Email: SalehAlhuqayl@gmail.com
-- GitHub: https://github.com/SalehAluqayl
+- GitHub: https://github.com/SalehAlhuqayl
