@@ -11,6 +11,9 @@ const SITE_URL = process.env.SITE_URL || 'https://salehalhuqayl.github.io/';
 export default defineConfig({
   site: SITE_URL,
   base: BASE_PATH,
+  build: {
+    assets: 'assets' // Change from default '_astro' to 'assets' to avoid GitHub Pages issues
+  },
   vite: {
     plugins: [tailwindcss()]
   }
