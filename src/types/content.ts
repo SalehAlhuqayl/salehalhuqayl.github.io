@@ -50,6 +50,7 @@ export interface SiteData {
     links: {
       repo?: string;
       live?: string;
+      website?: string;
     };
     images: string[];
   }>;
@@ -78,6 +79,7 @@ export interface Project {
   links: {
     repo?: string;
     live?: string;
+    website?: string;
   };
   images: string[];
 }

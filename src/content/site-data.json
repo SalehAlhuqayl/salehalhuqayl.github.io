@@ -156,33 +156,34 @@
         "Delivered actionable recommendations for investment decisions"
       ],
       "links": {
-        "repo": "https://github.com/SalehAlhuqayl/investment-analysis",
+        "repo": "https://github.com/SalehAlhuqayl/investment-growth-analysis",
         "live": null
       },
       "images": []
     },
     {
-      "slug": "temp-analysis-tasi-gold",
-      "name": "temp Growth Analysis - TASI & Gold Futures",
-      "role": "Data Analyst",
-      "period": "2024",
-      "stack": ["R", "Tidyverse", "ggplot2", "Data Analysis", "Financial Modeling"],
-      "problem": "Investors needed insights into historical performance comparison between Saudi stock market (TASI) and Gold Futures for portfolio diversification decisions.",
+      "slug": "TechHub Student Club",
+      "name": "TechHub Student Club – Founding & Leadership Journey",
+      "role": "Founding Member → Head of Organizing Committee → co-Leader → Leader",
+      "period": "2021-2024",
+      "stack": ["Leadership & Management", "Community Engagement", "Event Organization", "Digital Transformation", "Team Building"],
+      "problem": "Students at Majmaah University lacked a dedicated platform to connect, learn, and engage in digital skills development. There was a need for a student-driven initiative to foster collaboration, organize events, and promote digital knowledge across the College of Computer Sciences & Information Technology.",
       "approach": [
-        "Analyzed historical performance data from 1998-2023",
-        "Compared SAR 1,000 investment growth in TASI vs Gold Futures",
+        "Co-founded the TechHub Student Club as part of the core management team",
+        "Directed the design and launch of the official TechHub website featuring a gamified points-based system to boost student participation (techhubmu.com)",
         "Applied statistical analysis for performance metrics",
-        "Created visualization dashboards for investment insights"
+        "Organized and led university-wide exhibitions, bootcamps, workshops, and training programs to promote digital literacy and innovation"
       ],
       "impact": [
-        "Provided clear portfolio diversification insights for 25-year period",
-        "Identified optimal investment allocation strategies",
-        "Created reusable framework for future market analysis",
-        "Delivered actionable recommendations for investment decisions"
+        "Achieved 80% student engagement across the College of Engineering",
+        "Secured the Gold Award from Majmaah University for outstanding student initiatives",
+        "Built a sustainable digital platform for students to track progress and earn rewards",
+        "Established a strong foundation for the club, ensuring continuity and growth for future cohorts"
       ],
       "links": {
-        "repo": "https://github.com/SalehAlhuqayl/investment-analysis",
-        "live": null
+        "repo": null,
+        "live": null,
+        "website": "https://techhubmu.com"
       },
       "images": []
     }
