@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://salehalhuqayl.github.io/Portfolio-2/sitemap.xml
+Sitemap: https://salehalhuqayl.github.io/sitemap.xml
 
 # Disallow private areas
 Disallow: /api/
