@@ -201,7 +201,7 @@
         },
         {
           "category": "Data Science & ML",
-          "items": ["Machine Learning", "Deep Learning", "Predictive Analytics", "Statistical Modeling", "Data Mining"]
+          "items": ["Machine Learning", "Deep Learning", "Predictive Analytics", "Statistical Modeling", "PyTorch","SKlearn"]
         },
         {
           "category": "Data Analysis",
@@ -209,7 +209,7 @@
         },
         {
           "category": "Data Engineering",
-          "items": ["Pipelines", "Data Warehousing", "Informatica IDQ", "Data Quality"]
+          "items": ["Pipelines", "Data Warehousing", "Informatica IDQ", "Data Quality","Data Governance","Data Mining","Data Quality"]
         },
         {
           "category": "Databases",
@@ -222,11 +222,14 @@
       ],
       "soft": [
         "Problem Solving",
+        "Leadership",
         "Strategic Thinking", 
         "Project Management",
         "Cross-functional Collaboration",
         "Data Storytelling",
-        "Stakeholder Communication"
+        "Stakeholder Communication",
+        "Analytical Thinking"
+
       ]
     }
   },
@@ -237,6 +240,14 @@
     "preferred_contact": "email"
   },
   "certifications": [
+    {
+      "name": "AI Programming with Python - Nanodegree Program",
+      "issuer": "Udacity",
+      "date": "2025",
+      "description": "Gained hands-on skills in Python, NumPy, pandas, Matplotlib, and PyTorch. Built and trained machine learning and deep learning models, applying linear algebra and statistics to real-world AI applications.",
+      "badge": null,
+      "url": "https://www.udacity.com/certificate/e/73bebc4a-2e51-11f0-b630-23d2dd864ab5"
+    },
     {
       "name": "Predictive Analytics Modeler Certificate",
       "issuer": "IBM",
