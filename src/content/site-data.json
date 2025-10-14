@@ -3,7 +3,7 @@
     "name": "Saleh Alhuqayl",
     "title": "Data Scientist",
     "tagline": "Specializing in data quality, AI-driven analytics, and strategic reporting.",
-    "email": "Saleh.Alhuqayl@gmail.com",
+    "email": "Saleh@alhuqayl.com",
     "location": "Riyadh, Saudi Arabia",
     "social": {
       "github": "https://github.com/SalehAlhuqayl",
@@ -40,7 +40,7 @@
     {
       "number": "80%",
       "label": "Infrastructure Coverage",
-      "description": "Built and integrated 15+ data systems for MoHU"
+      "description": "Built and integrated 16+ data systems for MoHU"
     },
     {
       "number": "25%",
@@ -48,9 +48,9 @@
       "description": "Enhanced geographic data accuracy via Python-based error detection"
     },
     {
-      "number": "20%",
-      "label": "Faster Reporting",
-      "description": "Accelerated analytical and operational reporting during peak Hajj seasons"
+      "number": "60%",
+      "label": "boosting productivity",
+      "description": "Developed software to automate the integration of business rules with CDEs"
     },
     {
       "number": "12%",
@@ -68,8 +68,9 @@
       "problem": "The Ministry of Hajj & Umrah needed to integrate 16+ diverse data systems and align with National Data Index (NDI) standards while ensuring data quality across multiple dimensions.",
       "approach": [
         "Integrated 16+ data systems from diverse databases into centralized catalog",
-        "Applied over 150 Critical Data Elements (CDEs) covering uniqueness, completeness, and validity",
+        "Applied over 1500 Critical Data Elements (CDEs) covering uniqueness, completeness, and validity",
         "Mapped all CDEs to NDI standards for compliance",
+        "Developed software to automate the integration of business rules with CDEs, boosting productivity by over 60%.",
         "Implemented automated validation and quality monitoring",
         "Enhanced and governed the ministry’s datasets by reviewing Hajj & Umrah Center data, delivering numerous insights and recommendations.",
         "Focused on improving critical pilgrimage datasets, most notably accommodation data, achieving a 25% improvement in Hajj housing records."
