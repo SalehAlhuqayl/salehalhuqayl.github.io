@@ -250,12 +250,12 @@
       "url": "https://www.udacity.com/certificate/e/73bebc4a-2e51-11f0-b630-23d2dd864ab5"
     },
     {
-      "name": "Predictive Analytics Modeler Certificate",
-      "issuer": "IBM",
-      "date": "2024",
-      "description": "Professional certification in predictive analytics modeling, machine learning algorithms, and statistical analysis using IBM tools and methodologies",
+      "name": "PCAD™ – Certified Associate Data Analyst with Python",
+      "issuer": "openEDG",
+      "date": "2025",
+      "description": "A certification confirming strong proficiency in Python-driven data preparation, validation, ETL workflows, and analytical techniques using core libraries like Pandas and NumPy.",
       "badge": null,
-      "url": "https://www.credly.com/badges/9a474bb0-babb-4d36-ba4a-d5a6a003c835/public_url"
+      "url": "https://verify.openedg.org/?id=U3Y9.AYcx.ug9L"
     },
     {
       "name": "Jr Data Scientist Certificate",
@@ -264,6 +264,14 @@
       "description": "Junior Data Scientist certification covering data analysis, machine learning fundamentals, Python programming, and data visualization techniques",
       "badge": null,
       "url": "https://certs.ine.com/9a0f5eea-7bec-4edd-8ce0-6205a8b3cd16#acc.ujoirp0s"
+    },
+    {
+      "name": "Predictive Analytics Modeler Certificate",
+      "issuer": "IBM",
+      "date": "2024",
+      "description": "Professional certification in predictive analytics modeling, machine learning algorithms, and statistical analysis using IBM tools and methodologies",
+      "badge": null,
+      "url": "https://www.credly.com/badges/9a474bb0-babb-4d36-ba4a-d5a6a003c835/public_url"
     },
 
     {
