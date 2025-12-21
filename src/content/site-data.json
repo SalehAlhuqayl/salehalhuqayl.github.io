@@ -64,7 +64,7 @@
       "name": "National Data Index Compliance for MoHU",
       "role": "Data Scientist at Mozn",
       "period": "Nov 2024 – Present",
-      "stack": ["Python", "Informatica IDQ", "Data Quality", "Data Governance", "Critical Data Elements", "NDI"],
+      "stack": ["Python", "SQL", "Pandas","Polars", "Informatica IDQ", "Data Engineering","Data Quality", "Data Governance", "Critical Data Elements", "NDI"],
       "problem": "The Ministry of Hajj & Umrah needed to integrate 16+ diverse data systems and align with National Data Index (NDI) standards while ensuring data quality across multiple dimensions.",
       "approach": [
         "Integrated 16+ data systems from diverse databases into centralized catalog",
@@ -80,6 +80,41 @@
         "Enhanced data governance and compliance with national standards",
         "Significantly improved data quality for MoHU operations",
         "Accelerated reporting during peak Hajj seasons by 20%"
+      ],
+      "links": {
+        "repo": null,
+        "live": null
+      },
+      "images": []
+    },
+    {
+      "slug": "ai-tender-relevance-agent-etimad",
+      "name": "AI Agent for Tender Relevance Scoring - Etimad Platform",
+      "role": "Data Scientist at Mozn",
+      "period": "2025",
+      "stack": [
+        "Python",
+        "LLMs",
+        "AI Agents",
+        "Prompt Engineering",
+        "OpenAI API",
+        "APIs Integration",
+        "Data Engineering",
+        "Monitoring & Logging"
+      ],
+      "problem": "Mozn needed an efficient way to assess large volumes of public tenders published on the Etimad platform and identify opportunities that best align with its strategic and commercial objectives, without relying on manual review.",
+      "approach": [
+        "Developed an LLM-powered AI agent to analyze and evaluate public tenders from the Etimad platform",
+        "Designed structured scoring logic to assess tender relevance based on Mozn’s business domains and capabilities",
+        "Applied advanced prompt engineering to ensure consistent, explainable, and objective evaluations",
+        "Implemented ranking mechanisms to surface high-fit tenders for key stakeholders",
+        "Ensured the agent’s outputs were interpretable and actionable for business teams"
+      ],
+      "impact": [
+        "Reduced manual tender review effort by a significant margin",
+        "Improved identification of high-relevance public sector opportunities",
+        "Accelerated decision-making for bid and proposal teams",
+        "Increased focus on strategically aligned tenders with higher win potential"
       ],
       "links": {
         "repo": null,
